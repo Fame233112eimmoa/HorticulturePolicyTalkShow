@@ -20,7 +20,6 @@ import {
   gearRentals,
   grandTotalNote,
   overviewCards,
-  paymentTerms,
   postProductionItems,
   productionProcess,
   socialLinks,
@@ -445,13 +444,23 @@ export default function ProposalPage() {
 
                 <div className="rounded-[1rem] border border-line bg-surface px-4 py-4">
                   <h2 className="font-display text-2xl text-ink">
-                    Payment Terms
+                    Final Notes
                   </h2>
-                  <div className="mt-3">
-                    <CompactGrid
-                      items={paymentTerms}
-                      columns="grid-cols-1 sm:grid-cols-1"
-                    />
+                  <div className="mt-3 grid gap-2 text-xs leading-5 text-graphite">
+                    <p>
+                      The client may choose one of the four quoted packages
+                      based on the preferred production format and support level.
+                    </p>
+                    <p>
+                      Talk-show packages cover the Studio 04 route, while the
+                      cooking-show packages include the revised sound-gear line
+                      and updated production totals.
+                    </p>
+                    <p>
+                      All quoted amounts and line-item summaries shown here are
+                      aligned with the latest budget revision for the printable
+                      proposal.
+                    </p>
                   </div>
                 </div>
               </div>

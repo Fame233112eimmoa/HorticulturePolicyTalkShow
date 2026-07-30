@@ -478,6 +478,7 @@ export const equipmentScheduleGroups: EquipmentScheduleGroup[] = [
       { name: "Sony 24-70mm and 85mm professional lenses" },
       { name: "1 x external production monitor" },
       { name: "3 x Aputure 600D professional lights" },
+      { name: "Sound gears" },
       { name: "Light soft box and diffusion support" },
       { name: "Professional tripods and camera support systems" },
       { name: "Camera batteries and memory cards" },
@@ -498,6 +499,7 @@ export const equipmentScheduleGroups: EquipmentScheduleGroup[] = [
       { name: "50mm prime lens" },
       { name: "1 x external monitor" },
       { name: "2 x Amaran 300D/200D LED lights" },
+      { name: "Sound gears" },
       { name: "Light soft box and diffusion support" },
       { name: "Professional tripods" },
       { name: "Batteries and memory cards" },
@@ -723,7 +725,7 @@ export const budgetPackages: BudgetPackage[] = [
     title: "Standard talk show package",
     shortSummary:
       "A leaner studio talk-show package that preserves a professional panel-discussion look while reducing crew size and equipment cost.",
-    total: 56000,
+    total: 60000,
     highlights: [
       "Studio 04 podcast production suite with microphones, RODECaster, seating, and studio support",
       "2 Canon cinema cameras, core lens coverage, one monitor, Amaran lighting, tripods, media, and basic grip support",
@@ -785,10 +787,10 @@ export const budgetPackages: BudgetPackage[] = [
     title: "Cinema cooking show package",
     shortSummary:
       "A cinematic cooking-show production route built around Sony FX3 coverage, stronger lighting control, directed multi-camera operation, and polished episode finishing.",
-    total: 56000,
+    total: 55700,
     highlights: [
       "2 Sony FX3 cinema cameras with 24-70mm and 85mm lens coverage for controlled kitchen framing",
-      "3 Aputure 600D lights, external monitoring, tripods, support systems, accessories, and grip equipment",
+      "3 Aputure 600D lights, sound gears, external monitoring, tripods, support systems, accessories, and grip equipment",
       "Two videographers, director, makeup, photography, and final finishing for all 12 episodes",
     ],
     lineItems: [
@@ -796,12 +798,18 @@ export const budgetPackages: BudgetPackage[] = [
         item: "Production Gear",
         description:
           "2 Sony FX3 cinema cameras, Sony professional lenses, one external production monitor, tripods, support systems, batteries, memory cards, accessories, and grip equipment.",
-        amount: 14000,
+        amount: 15000,
       },
       {
         item: "Lighting",
         description: "3 Aputure 600D professional lights for the cooking-show setup.",
         amount: 4200,
+      },
+      {
+        item: "Sound Gears",
+        description:
+          "Dedicated audio support gear for clean cooking-show dialogue capture and monitoring.",
+        amount: 3000,
       },
       {
         item: "Makeup and Styling",
@@ -848,10 +856,10 @@ export const budgetPackages: BudgetPackage[] = [
     title: "Standard cooking show package",
     shortSummary:
       "A cost-conscious cooking-show package using Canon cinema cameras, practical lighting, a leaner crew structure, and streamlined post-production.",
-    total: 56000,
+    total: 45000,
     highlights: [
       "2 Canon cinema cameras with 24-70mm pair, 50mm prime, one monitor, and core support gear",
-      "Amaran LED lighting, tripods, batteries, memory cards, and basic grip support for kitchen coverage",
+      "Amaran LED lighting, sound gears, tripods, batteries, memory cards, and basic grip support for kitchen coverage",
       "Two videographers, director support, selected stills, makeup, and final episode delivery",
     ],
     lineItems: [
@@ -860,6 +868,12 @@ export const budgetPackages: BudgetPackage[] = [
         description:
           "2 Canon cinema cameras, Canon professional lens kit, one external monitor, 2 Amaran LED lights, tripods, batteries, memory cards, and basic grip equipment.",
         amount: 14000,
+      },
+      {
+        item: "Sound Gears",
+        description:
+          "Dedicated audio support gear for clear kitchen-show dialogue capture and monitoring.",
+        amount: 3000,
       },
       {
         item: "Makeup and Styling",
