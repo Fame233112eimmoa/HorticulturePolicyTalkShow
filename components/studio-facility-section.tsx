@@ -71,6 +71,7 @@ export function StudioFacilitySection() {
                       controls
                       playsInline
                       preload="auto"
+                      poster={item.poster}
                       className="aspect-[9/16] h-full w-full object-contain bg-black"
                     >
                       <source src={item.src} />
