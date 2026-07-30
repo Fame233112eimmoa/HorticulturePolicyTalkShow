@@ -856,7 +856,7 @@ export const budgetPackages: BudgetPackage[] = [
     title: "Standard cooking show package",
     shortSummary:
       "A cost-conscious cooking-show package using Canon cinema cameras, practical lighting, a leaner crew structure, and streamlined post-production.",
-    total: 45000,
+    total: 46000,
     highlights: [
       "2 Canon cinema cameras with 24-70mm pair, 50mm prime, one monitor, and core support gear",
       "Amaran LED lighting, sound gears, tripods, batteries, memory cards, and basic grip support for kitchen coverage",
@@ -867,7 +867,7 @@ export const budgetPackages: BudgetPackage[] = [
         item: "Production Gear",
         description:
           "2 Canon cinema cameras, Canon professional lens kit, one external monitor, 2 Amaran LED lights, tripods, batteries, memory cards, and basic grip equipment.",
-        amount: 14000,
+        amount: 15000,
       },
       {
         item: "Sound Gears",
