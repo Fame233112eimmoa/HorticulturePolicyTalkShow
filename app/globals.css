@@ -69,7 +69,7 @@ body {
 @media print {
   @page {
     size: A4;
-    margin: 14mm;
+    margin: 10mm;
   }
 
   html {
@@ -107,6 +107,18 @@ body {
     max-width: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+  }
+
+  .print-six-page {
+    break-after: page !important;
+    page-break-after: always !important;
+    min-height: calc(297mm - 20mm);
+    margin: 0 !important;
+  }
+
+  .print-six-page:last-child {
+    break-after: auto !important;
+    page-break-after: auto !important;
   }
 
   .print-page-wrap {
