@@ -1,0 +1,11 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="720" fill="#F7F7F5"/>
+  <rect x="56" y="56" width="848" height="608" rx="30" fill="#FCFCFB" stroke="#E8E8E8" stroke-width="2"/>
+  <rect x="190" y="246" width="378" height="208" rx="34" fill="#111111"/>
+  <circle cx="408" cy="350" r="74" fill="#FCFCFB"/>
+  <circle cx="408" cy="350" r="44" fill="#111111"/>
+  <rect x="568" y="286" width="184" height="128" rx="28" fill="#111111"/>
+  <rect x="250" y="206" width="136" height="44" rx="18" fill="#333333"/>
+  <rect x="184" y="538" width="242" height="16" rx="8" fill="#111111"/>
+  <text x="184" y="160" fill="#526046" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="3">CAMERA BODY</text>
+</svg>

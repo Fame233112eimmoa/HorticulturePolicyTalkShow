@@ -1,0 +1,10 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="720" fill="#F7F7F5"/>
+  <rect x="56" y="56" width="848" height="608" rx="30" fill="#FCFCFB" stroke="#E8E8E8" stroke-width="2"/>
+  <rect x="188" y="184" width="584" height="318" rx="28" fill="#111111"/>
+  <rect x="226" y="222" width="508" height="242" rx="18" fill="#FAFAF8"/>
+  <rect x="416" y="502" width="128" height="34" rx="17" fill="#333333"/>
+  <rect x="390" y="536" width="180" height="24" rx="12" fill="#111111"/>
+  <rect x="170" y="576" width="236" height="16" rx="8" fill="#111111"/>
+  <text x="170" y="160" fill="#526046" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="3">MONITOR</text>
+</svg>

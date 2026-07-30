@@ -1,0 +1,17 @@
+<svg width="900" height="720" viewBox="0 0 900 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="720" fill="#FFFFFF"/>
+  <rect x="52" y="52" width="796" height="616" rx="30" fill="#F7F7F5" stroke="#E8E8E8" stroke-width="2"/>
+  <rect x="106" y="454" width="688" height="134" rx="28" fill="white" stroke="#E8E8E8" stroke-width="2"/>
+  <rect x="196" y="232" width="70" height="158" rx="35" fill="#111111"/>
+  <rect x="416" y="198" width="70" height="192" rx="35" fill="#111111"/>
+  <rect x="636" y="232" width="70" height="158" rx="35" fill="#111111"/>
+  <path d="M230 390V454" stroke="#333333" stroke-width="8" stroke-linecap="round"/>
+  <path d="M450 390V454" stroke="#333333" stroke-width="8" stroke-linecap="round"/>
+  <path d="M670 390V454" stroke="#333333" stroke-width="8" stroke-linecap="round"/>
+  <path d="M230 454H154" stroke="#333333" stroke-width="8" stroke-linecap="round"/>
+  <path d="M450 454H374" stroke="#333333" stroke-width="8" stroke-linecap="round"/>
+  <path d="M670 454H594" stroke="#333333" stroke-width="8" stroke-linecap="round"/>
+  <rect x="146" y="124" width="258" height="16" rx="8" fill="#111111"/>
+  <rect x="146" y="156" width="214" height="12" rx="6" fill="#333333"/>
+  <text x="146" y="212" fill="#526046" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="3">MIC SETUP</text>
+</svg>

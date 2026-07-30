@@ -1,0 +1,10 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="720" fill="#F7F7F5"/>
+  <rect x="56" y="56" width="848" height="608" rx="30" fill="#FCFCFB" stroke="#E8E8E8" stroke-width="2"/>
+  <rect x="222" y="246" width="132" height="228" rx="24" fill="#111111"/>
+  <rect x="260" y="274" width="56" height="18" rx="9" fill="#FCFCFB"/>
+  <rect x="414" y="280" width="144" height="194" rx="22" fill="#111111"/>
+  <rect x="606" y="318" width="112" height="156" rx="18" fill="#111111"/>
+  <rect x="192" y="548" width="216" height="16" rx="8" fill="#111111"/>
+  <text x="192" y="160" fill="#526046" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="3">ACCESSORY KIT</text>
+</svg>

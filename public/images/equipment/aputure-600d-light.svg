@@ -1,0 +1,12 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="720" fill="#F7F7F5"/>
+  <rect x="56" y="56" width="848" height="608" rx="30" fill="#FCFCFB" stroke="#E8E8E8" stroke-width="2"/>
+  <circle cx="480" cy="274" r="128" fill="#526046" opacity="0.16"/>
+  <circle cx="480" cy="274" r="82" fill="#111111"/>
+  <rect x="450" y="372" width="60" height="110" rx="20" fill="#111111"/>
+  <path d="M480 482V600" stroke="#333333" stroke-width="10" stroke-linecap="round"/>
+  <path d="M480 482L420 604" stroke="#333333" stroke-width="10" stroke-linecap="round"/>
+  <path d="M480 482L540 604" stroke="#333333" stroke-width="10" stroke-linecap="round"/>
+  <rect x="176" y="574" width="186" height="16" rx="8" fill="#111111"/>
+  <text x="176" y="160" fill="#526046" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="3">LIGHT</text>
+</svg>

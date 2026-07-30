@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #111111;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(82, 96, 70, 0.16);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-feature-settings: "liga" 1, "kern" 1;
+    letter-spacing: -0.025em;
+    line-height: 0.96;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@layer components {
+  .page-hero {
+    @apply border-b border-line bg-white;
+  }
+
+  .page-hero-inner {
+    @apply mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20;
+  }
+
+  .page-kicker {
+    @apply font-sans text-xs uppercase tracking-proposal text-accent;
+  }
+
+  .page-title {
+    @apply mt-5 max-w-4xl font-display text-5xl leading-tight text-ink sm:text-6xl;
+  }
+
+  .page-copy {
+    @apply mt-6 max-w-3xl text-base leading-8 text-graphite sm:text-lg;
+  }
+
+  .metric-card {
+    @apply rounded-[1.5rem] border border-line bg-white p-6;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .shadow-panel {
+    box-shadow: none !important;
+  }
+
+  section,
+  article {
+    break-inside: avoid;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
