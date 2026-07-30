@@ -47,42 +47,31 @@ export function MediaGallery({ items }: MediaGalleryProps) {
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {items.map((item) =>
           item.kind === "image" ? (
-            (() => {
-              const imageLabel = item.src.endsWith(".svg")
-                ? "Image placeholder"
-                : "Uploaded image";
-
-              return (
-                <button
-                  key={item.title}
-                  type="button"
-                  onClick={() => setActiveImage(item)}
-                  className="overflow-hidden rounded-[1.75rem] border border-line bg-white text-left shadow-panel transition-transform duration-300 hover:-translate-y-1"
-                  aria-label={`Open ${item.title}`}
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden bg-surface">
-                    <Image
-                      src={item.src}
-                      alt={item.title}
-                      fill
-                      sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
-                      className="object-cover"
-                    />
-                    <span className="absolute left-4 top-4 rounded-full border border-white/70 bg-white/92 px-3 py-1 text-[11px] uppercase tracking-proposal text-graphite">
-                      {imageLabel}
-                    </span>
-                  </div>
-                  <div className="border-t border-line px-6 py-6">
-                    <p className="font-display text-2xl leading-snug text-ink">
-                      {item.title}
-                    </p>
-                    <p className="mt-4 text-sm leading-7 text-graphite">
-                      {item.description}
-                    </p>
-                  </div>
-                </button>
-              );
-            })()
+            <button
+              key={item.title}
+              type="button"
+              onClick={() => setActiveImage(item)}
+              className="overflow-hidden rounded-[1.75rem] border border-line bg-white text-left shadow-panel transition-transform duration-300 hover:-translate-y-1"
+              aria-label={`Open ${item.title}`}
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-surface">
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  fill
+                  sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="border-t border-line px-6 py-6">
+                <p className="font-display text-2xl leading-snug text-ink">
+                  {item.title}
+                </p>
+                <p className="mt-4 text-sm leading-7 text-graphite">
+                  {item.description}
+                </p>
+              </div>
+            </button>
           ) : (
             <article
               key={item.title}
@@ -107,9 +96,6 @@ export function MediaGallery({ items }: MediaGalleryProps) {
                       sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
                       className="object-cover"
                     />
-                    <span className="absolute left-4 top-4 rounded-full border border-white/70 bg-white/92 px-3 py-1 text-[11px] uppercase tracking-proposal text-graphite">
-                      Video placeholder
-                    </span>
                     <div className="absolute inset-x-0 bottom-0 border-t border-white/60 bg-white/92 px-4 py-4">
                       <div className="flex items-center justify-between gap-4">
                         <div className="flex items-center gap-3">

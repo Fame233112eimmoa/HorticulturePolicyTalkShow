@@ -9,4 +9,4 @@ export const siteLogo = {
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 export const siteDescription =
-  "Full-service studio production for 12 episodes of the Horticulture Business Platform Policy Talk Show, including equipment, crew, post-production, and the GH₵85,000 budget.";
+  "Production proposal options for Horticulture Business Platform across talk-show and cooking-show formats, with quoted packages ranging from GH₵56,000 to GH₵85,000.";

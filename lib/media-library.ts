@@ -25,22 +25,6 @@ export const studioImages: ManagedMediaAsset[] = [
     src: "/images/studio/studio-live-panel-setup.jpg",
     kind: "image",
   },
-  {
-    id: "microphone-setup",
-    title: "Microphone setup",
-    description:
-      "A close-detail placeholder for the mounted microphone and table configuration.",
-    src: "/images/studio/microphone-setup.svg",
-    kind: "image",
-  },
-  {
-    id: "rodecaster-console",
-    title: "RØDECaster",
-    description:
-      "A control-surface placeholder for the audio and switching system in the room.",
-    src: "/images/studio/rodecaster-console.svg",
-    kind: "image",
-  },
 ];
 
 export const equipmentImages: ManagedMediaAsset[] = [
@@ -235,24 +219,22 @@ export const behindTheScenesImages: ManagedMediaAsset[] = [
 
 export const productionVideos: ManagedMediaAsset[] = [
   {
-    id: "production-reel",
-    title: "Short production videos",
+    id: "studio-option-1-video",
+    title: "Studio option 1 walkthrough",
     description:
-      "Local placeholder for short production reels and behind-the-scenes motion clips.",
-    src: "/videos/production-reel-placeholder.svg",
-    poster: "/videos/production-reel-placeholder.svg",
+      "A studio walkthrough showing the first room option, seating arrangement, camera sightlines, and the overall atmosphere for the policy talk-show recording.",
+    src: "/videos/studio-option-1.mp4",
+    poster: "/images/studio/studio-setup-visual-idea.jpg",
     kind: "video",
-    duration: "00:45",
   },
   {
-    id: "sample-cinematic-footage",
-    title: "Sample cinematic footage",
+    id: "studio-option-2-video",
+    title: "Studio option 2 walkthrough",
     description:
-      "Local placeholder for polished sample footage that demonstrates final visual style.",
-    src: "/videos/sample-cinematic-footage.svg",
-    poster: "/videos/sample-cinematic-footage.svg",
+      "A second studio walkthrough presenting an alternate set option with different spacing, composition, and visual balance for the discussion format.",
+    src: "/videos/studio-option-2.mp4",
+    poster: "/images/studio/studio-live-panel-setup.jpg",
     kind: "video",
-    duration: "01:10",
   },
   {
     id: "editing-process-video",
@@ -328,6 +310,8 @@ export const galleryMediaItems: ManagedMediaAsset[] = [
   getMediaAsset("studio-team"),
   getMediaAsset("studio-wide-shot"),
   getMediaAsset("podcast-chairs-table"),
+  getMediaAsset("studio-option-1-video"),
+  getMediaAsset("studio-option-2-video"),
   getMediaAsset("studio-bts"),
   getMediaAsset("crew-placeholder"),
   getMediaAsset("directing-and-monitoring"),

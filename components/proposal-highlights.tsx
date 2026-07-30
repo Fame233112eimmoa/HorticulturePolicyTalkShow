@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, Receipt, ScanSearch } from "lucide-react";
 
-import { budgetTotal, formatCurrency } from "@/lib/proposal-data";
+import {
+  budgetMaximumTotal,
+  budgetMinimumTotal,
+  formatCurrency,
+} from "@/lib/proposal-data";
 import { SectionHeading } from "@/components/section-heading";
 
 const cards = [
@@ -20,13 +24,13 @@ const cards = [
   {
     title: "Budget summary",
     description:
-      "Review the GH₵85,000 investment across studio space, lighting, styling, photography, crew, direction, post-production, and miscellaneous costs.",
+      "Compare four quoted production packages across the talk-show and cooking-show formats before confirming the preferred route.",
     href: "/budget",
     icon: Receipt,
     bullets: [
-      `Project total: ${formatCurrency(budgetTotal)}`,
-      "Transparent line items",
-      "Deposit and milestone schedule",
+      `Package range: ${formatCurrency(budgetMinimumTotal)} to ${formatCurrency(budgetMaximumTotal)}`,
+      "4 selectable packages",
+      "2 talk show routes and 2 cooking show routes",
     ],
   },
 ];
@@ -38,7 +42,7 @@ export function ProposalHighlights() {
         <SectionHeading
           eyebrow="Scope And Budget"
           title="Production work and project cost are outlined separately for easier review."
-          description="One section covers the studio, gear, crew, and finishing work. The other breaks down the full budget category by category."
+          description="One section covers the studio, gear, crew, and finishing work. The other compares the four package options available to the client."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">

@@ -1,14 +1,17 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import {
   approvalActions,
   contactDetails,
+  formatCurrency,
+  getBudgetPackage,
   socialLinks,
 } from "@/lib/proposal-data";
+import { getMediaAsset } from "@/lib/media-library";
 
 type FormValues = {
   fullName: string;
@@ -33,11 +36,69 @@ export function ContactApprovalSection() {
 
   const nameRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
+  const selectedSelectionRef = useRef<string | null>(null);
 
   const allContactLinks = useMemo(
     () => [...contactDetails, ...socialLinks],
     [],
   );
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const selectedPackageId = params.get("package");
+    const selectedStudioId = params.get("studio");
+
+    const selectionKey = `${selectedPackageId ?? ""}|${selectedStudioId ?? ""}`;
+
+    if (
+      selectionKey === "|" ||
+      selectionKey === selectedSelectionRef.current
+    ) {
+      return;
+    }
+
+    const selectedPackage = selectedPackageId
+      ? getBudgetPackage(selectedPackageId)
+      : null;
+    const selectedStudio = selectedStudioId
+      ? getMediaAsset(selectedStudioId)
+      : null;
+
+    if (!selectedPackage && !selectedStudio) {
+      return;
+    }
+
+    const messageParts: string[] = [];
+
+    if (selectedPackage) {
+      messageParts.push(
+        `We would like to proceed with ${selectedPackage.format} ${selectedPackage.optionLabel} - ${selectedPackage.title} (${formatCurrency(selectedPackage.total)}).`,
+      );
+    }
+
+    if (selectedStudio) {
+      messageParts.push(
+        `Our preferred studio choice is ${selectedStudio.title}.`,
+      );
+    }
+
+    messageParts.push("Please share the next steps for approval and scheduling.");
+
+    setFormValues((current) => ({
+      ...current,
+      message: messageParts.join(" "),
+    }));
+    setSubmitted(false);
+    setStatusMessage(
+      selectedPackage && selectedStudio
+        ? `${selectedPackage.title} and ${selectedStudio.title} have been selected. The message below was updated for approval.`
+        : selectedPackage
+          ? `${selectedPackage.title} has been selected. The message below was updated for approval.`
+          : `${selectedStudio?.title} has been selected. The message below was updated for approval.`,
+    );
+    selectedSelectionRef.current = selectionKey;
+    messageRef.current?.focus();
+  }, []);
 
   function updateField<K extends keyof FormValues>(field: K, value: FormValues[K]) {
     setFormValues((current) => ({
@@ -52,7 +113,7 @@ export function ContactApprovalSection() {
       updateField(
         "message",
         formValues.message ||
-          "We would like to approve the proposal and proceed with the next production steps.",
+          "We would like to approve the preferred production package and proceed with the next production steps.",
       );
       setStatusMessage("Approval message drafted in the form below.");
       messageRef.current?.focus();
@@ -89,9 +150,10 @@ export function ContactApprovalSection() {
               Let&apos;s Produce Something Exceptional
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-graphite sm:text-lg">
-              If the proposal meets your expectations, use the approval and
-              contact options below to confirm next steps or share revisions
-              before production scheduling is finalised.
+              If one of the proposal packages meets your expectations, use the
+              approval and contact options below to confirm the preferred
+              package or share revisions before production scheduling is
+              finalised.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
@@ -155,7 +217,7 @@ export function ContactApprovalSection() {
           <article className="rounded-[2rem] border border-line bg-white p-8 shadow-panel sm:p-10">
             <h3 className="font-display text-3xl text-ink">Proposal Contact Form</h3>
             <p className="mt-4 text-sm leading-7 text-graphite">
-              Use the form to approve the proposal, ask questions, or request
+              Use the form to approve a package, ask questions, or request
               adjustments before production dates are confirmed.
             </p>
 

@@ -54,11 +54,33 @@ type BudgetItem = {
   amount: number;
 };
 
+export type BudgetPackage = {
+  id: string;
+  format: "Talk Show" | "Cooking Show";
+  optionLabel: string;
+  title: string;
+  shortSummary: string;
+  total: number;
+  highlights: string[];
+  lineItems: BudgetItem[];
+};
+
 type GearItem = {
   name: string;
   description: string;
   quantity: string;
   mediaId: string;
+};
+
+type EquipmentScheduleItem = {
+  name: string;
+  detail?: string;
+};
+
+type EquipmentScheduleGroup = {
+  title: string;
+  description: string;
+  items: EquipmentScheduleItem[];
 };
 
 type ProcessStep = {
@@ -83,15 +105,15 @@ export const proposalName = "Horticulture Policy Talk Show";
 
 export const navItems = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
-  { label: "Scope", href: "/scope#scope" },
-  { label: "Studio", href: "/scope#studio" },
-  { label: "Equipment", href: "/scope#equipment" },
-  { label: "Crew", href: "/scope#crew" },
-  { label: "Post-Production", href: "/scope#post-production" },
+  { label: "About", href: "/about" },
+  { label: "Scope", href: "/scope" },
+  { label: "Studio", href: "/studio" },
+  { label: "Equipment", href: "/equipment" },
+  { label: "Crew", href: "/crew" },
+  { label: "Post-Production", href: "/post-production" },
   { label: "Budget", href: "/budget" },
-  { label: "Gallery", href: "/#gallery" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const overviewCards: IconItem[] = [
@@ -131,7 +153,7 @@ export const homeHighlights = [
   "Prepared by Lifestyle Studios",
   "12 episodes",
   "6 production days",
-  "Full-service multi-camera coverage",
+  "4 client-selectable production packages",
 ];
 
 export const aboutCopy = `Lifestyle Studios is a professional cinematography and media production company specializing in high quality video production, podcast production, photography, and post production services. We combine creative storytelling with industry standard equipment and experienced professionals to deliver visually compelling, broadcast quality content.
@@ -374,22 +396,113 @@ export const gearRentals: GearItem[] = [
     mediaId: "aputure-600d-light",
   },
   {
+    name: "Canon cinema cameras for standard package options",
+    description: "Canon R6 Mark II, Canon R8, or Canon R7 bodies used for the standard talk-show and cooking-show routes depending on availability.",
+    quantity: "2 units",
+    mediaId: "option-2-canon-r6-handheld",
+  },
+  {
+    name: "Canon 24-70mm pair and 50mm prime lens kit",
+    description: "The standard package lens set used for controlled medium coverage, close portrait framing, and general studio or kitchen production work.",
+    quantity: "3 lens options",
+    mediaId: "option-2-canon-r6-tabletop",
+  },
+  {
     name: "Professional tripods and camera support systems",
     description: "Stable support hardware for locked-off studio coverage, repeatable framing, and reliable positioning.",
     quantity: "Bundle",
     mediaId: "camera-support",
   },
   {
-    name: "Camera batteries and memory cards",
-    description: "Reliable power reserves and high-speed media sized to maintain uninterrupted recording and secure capture workflows.",
-    quantity: "Bundle",
-    mediaId: "accessory-kit",
-  },
-  {
     name: "Camera accessories and production grip equipment",
     description: "Essential accessories, rigging hardware, and grip support used to keep camera and lighting setups production-ready.",
     quantity: "Bundle",
     mediaId: "accessory-kit",
+  },
+];
+
+export const equipmentScheduleGroups: EquipmentScheduleGroup[] = [
+  {
+    title: "Talk Show Option 1 Equipment",
+    description:
+      "Full-service talk-show route built around the Studio 04 podcast facility and the premium Sony cinema package.",
+    items: [
+      { name: "Fully equipped podcast studio" },
+      { name: "3 x RODE podcast microphones" },
+      { name: "RODECaster audio and video switcher" },
+      { name: "3 x professional headphones" },
+      { name: "3 x podcast chairs" },
+      { name: "Studio utilities and technical support" },
+      { name: "3 x Sony FX3 cinema cameras" },
+      { name: "Sony 24-70mm, 18-35mm, and 85mm professional lens set" },
+      { name: "2 x external production monitors" },
+      { name: "3 x Aputure 600D professional lights" },
+      { name: "Light soft box and diffusion support" },
+      { name: "Professional tripods and camera support systems" },
+      { name: "Camera batteries and memory cards" },
+      { name: "Camera accessories and production grip equipment" },
+    ],
+  },
+  {
+    title: "Talk Show Option 2 Equipment",
+    description:
+      "Standard talk-show route using the same Studio 04 podcast suite with a more cost-efficient Canon camera package.",
+    items: [
+      { name: "Studio 04 podcast production suite" },
+      { name: "3 x RODE podcast microphones" },
+      { name: "RODECaster" },
+      { name: "3 x headphones" },
+      { name: "Podcast chairs" },
+      { name: "Studio support" },
+      {
+        name: "2 x Canon cinema cameras",
+        detail: "Canon R6 Mark II, Canon R8, or Canon R7 depending on availability.",
+      },
+      { name: "Canon professional lens kit" },
+      { name: "24-70mm x 2" },
+      { name: "50mm prime lens" },
+      { name: "1 x external monitor" },
+      { name: "2 x Amaran 300D/200D LED lights" },
+      { name: "Light soft box and diffusion support" },
+      { name: "Professional tripods" },
+      { name: "Batteries and memory cards" },
+      { name: "Basic grip equipment" },
+    ],
+  },
+  {
+    title: "Cooking Show Option 1 Equipment",
+    description:
+      "Premium cooking-show route built around the Sony cinema package, external monitoring, and stronger lighting coverage for kitchen production.",
+    items: [
+      { name: "2 x Sony FX3 cinema cameras" },
+      { name: "Sony 24-70mm and 85mm professional lenses" },
+      { name: "1 x external production monitor" },
+      { name: "3 x Aputure 600D professional lights" },
+      { name: "Light soft box and diffusion support" },
+      { name: "Professional tripods and camera support systems" },
+      { name: "Camera batteries and memory cards" },
+      { name: "Camera accessories and production grip equipment" },
+    ],
+  },
+  {
+    title: "Cooking Show Option 2 Equipment",
+    description:
+      "Standard cooking-show route using the Canon production package with lighter support gear and efficient kitchen coverage.",
+    items: [
+      {
+        name: "2 x Canon cinema cameras",
+        detail: "Canon R6 Mark II, Canon R8, or Canon R7 depending on availability.",
+      },
+      { name: "Canon professional lens kit" },
+      { name: "24-70mm x 2" },
+      { name: "50mm prime lens" },
+      { name: "1 x external monitor" },
+      { name: "2 x Amaran 300D/200D LED lights" },
+      { name: "Light soft box and diffusion support" },
+      { name: "Professional tripods" },
+      { name: "Batteries and memory cards" },
+      { name: "Basic grip equipment" },
+    ],
   },
 ];
 
@@ -538,56 +651,269 @@ export const deliverables = [
   "Digital delivery of all approved episodes",
 ];
 
-export const budgetItems: BudgetItem[] = [
+export const budgetPackages: BudgetPackage[] = [
   {
-    item: "Studio Space and Podcast Production Gears",
-    description: "Studio 04 podcast space, RØDE microphones, RØDECaster, professional headphones, podcast chairs, studio utilities, and technical support.",
-    amount: 40000,
+    id: "talk-show-option-1",
+    format: "Talk Show",
+    optionLabel: "Option 1",
+    title: "Premium multi-camera talk show package",
+    shortSummary:
+      "Full-service studio talk-show production with Studio 04, premium cinema cameras, dedicated lighting, photography, directing, and full finishing across 12 episodes.",
+    total: 85000,
+    highlights: [
+      "Studio 04 podcast suite with microphones, RODECaster, seating, utilities, and technical support",
+      "Premium multi-camera coverage with Sony FX3 cinema cameras, professional lenses, monitors, lighting, and grip support",
+      "Three videographers, director, photography, makeup, and polished post-production for all 12 episodes",
+    ],
+    lineItems: [
+      {
+        item: "Studio Space and Podcast Production Gears",
+        description:
+          "Studio 04 podcast space, RODE microphones, RODECaster, professional headphones, podcast chairs, studio utilities, and technical support.",
+        amount: 40000,
+      },
+      {
+        item: "Lighting",
+        description:
+          "3 Aputure 600D professional lights for controlled studio illumination during all production days.",
+        amount: 3000,
+      },
+      {
+        item: "Makeup and Styling",
+        description:
+          "Professional makeup artist coverage, on-set touch-ups, and basic hair styling support.",
+        amount: 5000,
+      },
+      {
+        item: "Photography",
+        description:
+          "Behind-the-scenes photography, production stills, and host and guest portraits.",
+        amount: 3000,
+      },
+      {
+        item: "Video Production Crew",
+        description:
+          "Three professional videographers, multi-camera coverage, production support, and data management with media backup.",
+        amount: 15000,
+      },
+      {
+        item: "Director",
+        description:
+          "Creative direction, production supervision, floor coordination, and quality control.",
+        amount: 8000,
+      },
+      {
+        item: "Post-Production (12 Episodes)",
+        description:
+          "Editing of all 12 episodes, multi-camera synchronisation, audio enhancement, colour correction and grading, graphics, mastering, export, and submission.",
+        amount: 8000,
+      },
+      {
+        item: "Miscellaneous Expenses",
+        description:
+          "Crew logistics, transportation, production consumables, backup storage, and contingency expenses.",
+        amount: 3000,
+      },
+    ],
   },
   {
-    item: "Lighting",
-    description: "3 Aputure 600D professional lights for controlled studio illumination during all production days.",
-    amount: 3000,
+    id: "talk-show-option-2",
+    format: "Talk Show",
+    optionLabel: "Option 2",
+    title: "Standard talk show package",
+    shortSummary:
+      "A leaner studio talk-show package that preserves a professional panel-discussion look while reducing crew size and equipment cost.",
+    total: 56000,
+    highlights: [
+      "Studio 04 podcast production suite with microphones, RODECaster, seating, and studio support",
+      "2 Canon cinema cameras, core lens coverage, one monitor, Amaran lighting, tripods, media, and basic grip support",
+      "Two videographers, floor supervision, makeup, still photography, and post-production delivery for 12 episodes",
+    ],
+    lineItems: [
+      {
+        item: "Studio and Podcast Production Facility",
+        description:
+          "Studio 04 podcast production suite with 3 RODE podcast microphones, RODECaster, headphones, chairs, and studio support.",
+        amount: 18000,
+      },
+      {
+        item: "Production Gear",
+        description:
+          "2 Canon cinema cameras, Canon professional lens kit, one external monitor, 2 Amaran LED lights, tripods, batteries, memory cards, and basic grip equipment.",
+        amount: 14000,
+      },
+      {
+        item: "Makeup and Styling",
+        description: "Makeup artist coverage with basic hair styling support.",
+        amount: 4000,
+      },
+      {
+        item: "Photography",
+        description:
+          "Behind-the-scenes photography and selected production stills.",
+        amount: 2000,
+      },
+      {
+        item: "Video Production Crew",
+        description: "Two professional videographers with media management.",
+        amount: 8000,
+      },
+      {
+        item: "Director / Producer",
+        description:
+          "Production direction, quality supervision, and floor coordination.",
+        amount: 5000,
+      },
+      {
+        item: "Post-Production",
+        description:
+          "Editing of all 12 episodes, colour correction, audio enhancement, intro and outro integration, basic motion graphics, and final delivery.",
+        amount: 6000,
+      },
+      {
+        item: "Miscellaneous Production Expenses",
+        description:
+          "Transportation, crew logistics, and production consumables.",
+        amount: 3000,
+      },
+    ],
   },
   {
-    item: "Makeup and Styling",
-    description: "Professional makeup artist coverage, on-set touch-ups, and basic hair styling support.",
-    amount: 5000,
+    id: "cook-show-option-1",
+    format: "Cooking Show",
+    optionLabel: "Option 1",
+    title: "Cinema cooking show package",
+    shortSummary:
+      "A cinematic cooking-show production route built around Sony FX3 coverage, stronger lighting control, directed multi-camera operation, and polished episode finishing.",
+    total: 56000,
+    highlights: [
+      "2 Sony FX3 cinema cameras with 24-70mm and 85mm lens coverage for controlled kitchen framing",
+      "3 Aputure 600D lights, external monitoring, tripods, support systems, accessories, and grip equipment",
+      "Two videographers, director, makeup, photography, and final finishing for all 12 episodes",
+    ],
+    lineItems: [
+      {
+        item: "Production Gear",
+        description:
+          "2 Sony FX3 cinema cameras, Sony professional lenses, one external production monitor, tripods, support systems, batteries, memory cards, accessories, and grip equipment.",
+        amount: 14000,
+      },
+      {
+        item: "Lighting",
+        description: "3 Aputure 600D professional lights for the cooking-show setup.",
+        amount: 4200,
+      },
+      {
+        item: "Makeup and Styling",
+        description:
+          "Professional makeup artist coverage, on-set touch-ups, and basic hair styling.",
+        amount: 5000,
+      },
+      {
+        item: "Photography",
+        description:
+          "Behind-the-scenes photography, production stills, and host and guest portraits.",
+        amount: 2500,
+      },
+      {
+        item: "Video Production Crew",
+        description:
+          "Two professional videographers, multi-camera coverage, production support, and data management with media backup.",
+        amount: 12000,
+      },
+      {
+        item: "Director",
+        description:
+          "Creative direction, production supervision, floor coordination, and quality control.",
+        amount: 6000,
+      },
+      {
+        item: "Post-Production",
+        description:
+          "Editing of all 12 episodes, synchronisation, audio enhancement, colour correction and grading, graphics, mastering, export, and submission.",
+        amount: 5000,
+      },
+      {
+        item: "Miscellaneous Production Expenses",
+        description:
+          "Crew logistics, transportation, production consumables, backup storage, and contingency expenses.",
+        amount: 3000,
+      },
+    ],
   },
   {
-    item: "Photography",
-    description: "Behind-the-scenes photography, production stills, and host and guest portraits.",
-    amount: 3000,
-  },
-  {
-    item: "Video Production Crew",
-    description: "Three professional videographers, multi-camera coverage, production support, and data management with media backup.",
-    amount: 15000,
-  },
-  {
-    item: "Director",
-    description: "Creative direction, production supervision, floor coordination, and quality control.",
-    amount: 8000,
-  },
-  {
-    item: "Post-Production (12 Episodes)",
-    description: "Editing of all 12 episodes, multi-camera synchronisation, audio enhancement, colour correction and grading, graphics, mastering, export, and submission.",
-    amount: 8000,
-  },
-  {
-    item: "Miscellaneous Expenses",
-    description: "Crew logistics, transportation, production consumables, backup storage, and contingency expenses.",
-    amount: 3000,
+    id: "cook-show-option-2",
+    format: "Cooking Show",
+    optionLabel: "Option 2",
+    title: "Standard cooking show package",
+    shortSummary:
+      "A cost-conscious cooking-show package using Canon cinema cameras, practical lighting, a leaner crew structure, and streamlined post-production.",
+    total: 56000,
+    highlights: [
+      "2 Canon cinema cameras with 24-70mm pair, 50mm prime, one monitor, and core support gear",
+      "Amaran LED lighting, tripods, batteries, memory cards, and basic grip support for kitchen coverage",
+      "Two videographers, director support, selected stills, makeup, and final episode delivery",
+    ],
+    lineItems: [
+      {
+        item: "Production Gear",
+        description:
+          "2 Canon cinema cameras, Canon professional lens kit, one external monitor, 2 Amaran LED lights, tripods, batteries, memory cards, and basic grip equipment.",
+        amount: 14000,
+      },
+      {
+        item: "Makeup and Styling",
+        description: "Makeup artist coverage with basic hair styling support.",
+        amount: 4000,
+      },
+      {
+        item: "Photography",
+        description:
+          "Behind-the-scenes photography and selected production stills.",
+        amount: 2000,
+      },
+      {
+        item: "Video Production Crew",
+        description: "Two professional videographers with media management.",
+        amount: 8000,
+      },
+      {
+        item: "Director / Producer",
+        description:
+          "Production direction, quality supervision, and floor coordination.",
+        amount: 5000,
+      },
+      {
+        item: "Post-Production",
+        description:
+          "Editing of all 12 episodes, colour correction, audio enhancement, intro and outro integration, basic motion graphics, and final delivery.",
+        amount: 6000,
+      },
+      {
+        item: "Miscellaneous Production Expenses",
+        description:
+          "Transportation, crew logistics, and production consumables.",
+        amount: 3000,
+      },
+    ],
   },
 ];
 
+export const talkShowBudgetPackages = budgetPackages.filter(
+  (item) => item.format === "Talk Show",
+);
+
+export const cookingShowBudgetPackages = budgetPackages.filter(
+  (item) => item.format === "Cooking Show",
+);
+
+export const budgetItems: BudgetItem[] = budgetPackages[0]?.lineItems ?? [];
+
 export const includedServices = [
-  "Studio 04 podcast production facility, microphones, switcher, seating, and technical support",
-  "Professional camera package, lens coverage, monitors, accessories, and grip support",
-  "Dedicated lighting allocation for 3 Aputure 600D professional fixtures",
-  "Makeup, styling, and photography support during production",
-  "Video crew, directing, and production support across 6 production days",
-  "Post-production finishing and digital submission of all 12 completed episodes",
+  "Two talk-show packages and two cooking-show packages presented for client selection",
+  "Quoted totals covering gear, crew, direction, finishing, and delivery across 12 episodes",
+  "Premium and standard service levels for both studio-panel and cooking-show formats",
+  "Production, post-production, and submission scope aligned to 6 planned production days",
 ];
 
 export const optionalAddOns = [
@@ -599,24 +925,38 @@ export const optionalAddOns = [
 
 export const pricingNotes = [
   "Pricing is presented in Ghana cedis (GHS).",
-  "The proposal assumes completion of 12 professionally produced episodes across 6 production days.",
-  "The GH₵85,000 total includes studio space, podcast production gears, lighting, makeup and styling, photography, crew, direction, post-production, and miscellaneous expenses.",
+  "Each package assumes completion of 12 professionally produced episodes across 6 production days.",
+  "Four quoted production options are available: two for the talk show and two for the cooking show format.",
+  "Package totals are presented as client-selectable quotations and will be confirmed with the preferred production route before scheduling.",
 ];
 
+export const budgetSelectionNote =
+  "Four quoted production packages are available for client selection across the talk-show and cooking-show formats.";
+
+export const budgetMinimumTotal = Math.min(
+  ...budgetPackages.map((item) => item.total),
+);
+
+export const budgetMaximumTotal = Math.max(
+  ...budgetPackages.map((item) => item.total),
+);
+
+export const budgetRangeLabel = `${formatCurrency(budgetMinimumTotal)} to ${formatCurrency(budgetMaximumTotal)}`;
+
 export const grandTotalNote =
-  "The total project cost is GH₵85,000 for 12 professionally produced episodes completed across 6 production days.";
+  "Quoted package totals range from GH₵56,000 to GH₵85,000 for 12 episodes completed across 6 production days.";
 
 export const contactDetails: ContactInfoItem[] = [
   {
     label: "Phone number",
-    value: "+233 (0) 00 000 0000",
-    href: "tel:+233000000000",
+    value: "0530448090",
+    href: "tel:0530448090",
     icon: Phone,
   },
   {
     label: "Email address",
-    value: "hello@lifestylestudios.co",
-    href: "mailto:hello@lifestylestudios.co",
+    value: "lifestylestudios80@gmail.com",
+    href: "mailto:lifestylestudios80@gmail.com",
     icon: Mail,
   },
   {
@@ -645,17 +985,20 @@ export const socialLinks: ContactInfoItem[] = [
 export const approvalActions: ActionItem[] = [
   {
     label: "Approve Proposal",
-    description: "Prefill the form with an approval message so next steps can be confirmed quickly.",
+    description:
+      "Draft an approval note for the selected production package so next steps can be confirmed quickly.",
     icon: BadgeCheck,
   },
   {
     label: "Contact Lifestyle Studios",
-    description: "Scroll directly to the contact form to discuss revisions, timing, or production details.",
+    description:
+      "Scroll directly to the contact form to discuss package revisions, timing, or production details.",
     icon: Mail,
   },
   {
     label: "Download Proposal",
-    description: "Open a print-ready summary of scope, crew, equipment, deliverables, and budget that can be saved as a PDF.",
+    description:
+      "Open a print-ready summary of scope, crew, equipment, deliverables, and package options that can be saved as a PDF.",
     icon: Download,
   },
 ];
@@ -666,11 +1009,15 @@ export const paymentTerms = [
   "20% on final delivery of approved masters",
 ];
 
-export const budgetTotal = budgetItems.reduce((sum, item) => sum + item.amount, 0);
+export const budgetTotal = budgetPackages[0]?.total ?? 0;
 
 export const perEpisodeCost = Math.round(budgetTotal / 12);
 
 export const perDayCost = Math.round(budgetTotal / 6);
+
+export function getBudgetPackage(id: string) {
+  return budgetPackages.find((item) => item.id === id);
+}
 
 export function formatCurrency(value: number) {
   return new Intl.NumberFormat("en-GH", {

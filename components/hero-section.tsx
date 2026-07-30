@@ -25,8 +25,9 @@ export function HeroSection() {
             Professional Production Proposal
           </p>
           <p className="mt-8 max-w-xl text-base leading-8 text-graphite sm:text-lg">
-            Full production for 12 episodes across 6 shoot days, including
-            studio setup, crew, and post-production delivery.
+            Production proposal options for 12 episodes across 6 shoot days,
+            covering the main policy talk-show brief and alternate cooking-show
+            routes with clear scope, crew, and delivery levels.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">

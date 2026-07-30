@@ -9,7 +9,9 @@ export default function NotFound() {
           This page is not available.
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-8 text-graphite sm:text-lg">
-          Return to the proposal overview, production scope, or budget pages.
+          Return to the proposal overview or continue through the dedicated
+          pages for scope, studio, equipment, crew, budget, gallery, and
+          contact.
         </p>
         <Link
           href="/"

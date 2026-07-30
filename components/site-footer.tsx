@@ -21,8 +21,9 @@ export function SiteFooter() {
             </div>
             <p className="mt-4 text-graphite">{siteTagline}</p>
             <p className="mt-4 max-w-xl leading-7">
-              Full studio production, crew, post-production, and final delivery
-              for the Horticulture Business Platform Policy Talk Show.
+              Production proposal options covering talk-show and cooking-show
+              formats, with clear scope, crew, post-production, and delivery
+              support.
             </p>
           </div>
 

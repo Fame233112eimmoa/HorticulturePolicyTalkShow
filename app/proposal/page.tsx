@@ -2,29 +2,30 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
+import { BudgetPackageCard } from "@/components/budget-package-card";
 import { PrintProposalButton } from "@/components/print-proposal-button";
 import { SiteLogo } from "@/components/site-logo";
 import {
   aboutCopy,
-  budgetItems,
-  budgetTotal,
+  budgetRangeLabel,
+  budgetSelectionNote,
   contactDetails,
+  cookingShowBudgetPackages,
   crewMembers,
   deliverables,
   detailedProductionScope,
-  formatCurrency,
   gearRentals,
-  grandTotalNote,
   overviewCards,
   postProductionItems,
   socialLinks,
+  talkShowBudgetPackages,
 } from "@/lib/proposal-data";
 import { siteName, siteTagline } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Printable Proposal",
   description:
-    "Print-ready summary of the Horticulture Policy Talk Show scope, equipment, crew, post-production, deliverables, and budget.",
+    "Print-ready summary of the Horticulture Business Platform production scope, equipment, crew, deliverables, and four quoted package options.",
 };
 
 export default function ProposalPage() {
@@ -52,10 +53,10 @@ export default function ProposalPage() {
             <SiteLogo variant="proposal" />
             <p className="page-kicker">Printable Proposal</p>
             <h1 className="mt-4 font-display text-4xl leading-tight text-ink sm:text-5xl">
-              Horticulture Policy Talk Show
+              Horticulture Business Platform
             </h1>
             <p className="mt-3 text-lg text-graphite">
-              Professional Production Proposal
+              Production proposal and package options
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-[1.5rem] border border-line bg-surface px-5 py-5">
@@ -69,13 +70,13 @@ export default function ProposalPage() {
               </div>
               <div className="rounded-[1.5rem] border border-line bg-surface px-5 py-5">
                 <p className="text-xs uppercase tracking-proposal text-graphite">
-                  Grand Total
+                  Package range
                 </p>
                 <p className="mt-2 font-display text-4xl text-ink">
-                  {formatCurrency(budgetTotal)}
+                  {budgetRangeLabel}
                 </p>
                 <p className="mt-2 text-sm leading-7 text-graphite">
-                  {grandTotalNote}
+                  {budgetSelectionNote}
                 </p>
               </div>
             </div>
@@ -191,36 +192,43 @@ export default function ProposalPage() {
           </section>
 
           <section className="border-b border-line py-8">
-            <h2 className="font-display text-3xl text-ink">Budget</h2>
-            <div className="mt-6 space-y-4">
-              {budgetItems.map((item) => (
-                <div
-                  key={item.item}
-                  className="rounded-[1.4rem] border border-line bg-surface px-5 py-4"
-                >
-                  <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                    <p className="font-display text-xl text-ink">{item.item}</p>
-                    <p className="font-display text-2xl text-ink">
-                      {formatCurrency(item.amount)}
-                    </p>
-                  </div>
-                  <p className="mt-2 text-sm leading-7 text-graphite">
-                    {item.description}
-                  </p>
-                </div>
+            <h2 className="font-display text-3xl text-ink">
+              Talk Show Package Options
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-graphite">
+              The talk-show brief is available as a premium route and a standard
+              route so the client can compare production depth against cost.
+            </p>
+            <div className="mt-6 space-y-6">
+              {talkShowBudgetPackages.map((item) => (
+                <BudgetPackageCard
+                  key={item.id}
+                  packageOption={item}
+                  showDescriptions
+                  className="shadow-none"
+                />
               ))}
             </div>
           </section>
 
           <section className="border-b border-line py-8">
-            <h2 className="font-display text-3xl text-ink">Grand Total</h2>
-            <div className="mt-6 rounded-[1.5rem] border border-line bg-surface px-6 py-6">
-              <p className="font-display text-4xl text-ink">
-                {formatCurrency(budgetTotal)}
-              </p>
-              <p className="mt-3 text-sm leading-7 text-graphite">
-                {grandTotalNote}
-              </p>
+            <h2 className="font-display text-3xl text-ink">
+              Cooking Show Package Options
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-graphite">
+              The cooking-show brief is also presented in premium and standard
+              routes, with the gear, lighting, and crew support adjusted to the
+              format.
+            </p>
+            <div className="mt-6 space-y-6">
+              {cookingShowBudgetPackages.map((item) => (
+                <BudgetPackageCard
+                  key={item.id}
+                  packageOption={item}
+                  showDescriptions
+                  className="shadow-none"
+                />
+              ))}
             </div>
           </section>
 
@@ -229,18 +237,7 @@ export default function ProposalPage() {
               Contact Information
             </h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {contactDetails.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-[1.4rem] border border-line bg-surface px-5 py-4"
-                >
-                  <p className="text-xs uppercase tracking-proposal text-graphite">
-                    {item.label}
-                  </p>
-                  <p className="mt-2 text-sm leading-7 text-ink">{item.value}</p>
-                </div>
-              ))}
-              {socialLinks.map((item) => (
+              {[...contactDetails, ...socialLinks].map((item) => (
                 <div
                   key={item.label}
                   className="rounded-[1.4rem] border border-line bg-surface px-5 py-4"
