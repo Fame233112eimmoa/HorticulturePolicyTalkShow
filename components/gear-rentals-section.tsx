@@ -8,6 +8,22 @@ import {
 } from "@/lib/proposal-data";
 
 export function GearRentalsSection() {
+  const equipmentReferenceIds = [
+    "sony-fx3-camera",
+    "sony-fx3-close-detail",
+    "sony-fx3-top-view",
+    "sony-fx3-gimbal-setup",
+    "sony-24-70-lens",
+    "sony-g-master-lens-closeup",
+    "production-monitor",
+    "production-monitor-product-view",
+    "aputure-600d-light",
+  ];
+
+  const equipmentReferences = equipmentReferenceIds
+    .map((id) => getMediaAsset(id))
+    .filter(Boolean);
+
   return (
     <section id="equipment" className="bg-surface">
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
@@ -53,6 +69,50 @@ export function GearRentalsSection() {
             );
           })}
         </div>
+
+        {equipmentReferences.length > 0 ? (
+          <div className="mt-14">
+            <div className="max-w-3xl">
+              <p className="page-kicker">Detailed Image References</p>
+              <h3 className="mt-4 font-display text-3xl leading-tight text-ink sm:text-4xl">
+                Camera, lens, monitor, and lighting image references.
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-graphite sm:text-base">
+                These image cards show the specific Sony camera builds, lens
+                references, monitor angles, and Aputure lighting visuals tied
+                to the production package.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {equipmentReferences.map((item) => (
+                <article
+                  key={item.id}
+                  className="overflow-hidden rounded-[1.75rem] border border-line bg-white shadow-panel"
+                >
+                  <div className="relative">
+                    <Image
+                      src={item.src}
+                      alt={item.title}
+                      width={960}
+                      height={720}
+                      sizes="(min-width: 1280px) 30vw, (min-width: 768px) 44vw, 100vw"
+                      className="h-auto w-full"
+                    />
+                  </div>
+                  <div className="border-t border-line px-6 py-6">
+                    <p className="font-display text-2xl leading-snug text-ink">
+                      {item.title}
+                    </p>
+                    <p className="mt-4 text-sm leading-7 text-graphite">
+                      {item.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ) : null}
 
         <div className="mt-14">
           <div className="max-w-3xl">
