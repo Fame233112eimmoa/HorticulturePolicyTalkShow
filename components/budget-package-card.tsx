@@ -21,7 +21,7 @@ export function BudgetPackageCard({
 
   return (
     <article
-      className={`rounded-[2rem] border border-line bg-white p-6 shadow-panel sm:p-8 ${className}`.trim()}
+      className={`print-flow rounded-[2rem] border border-line bg-white p-6 shadow-panel sm:p-8 ${className}`.trim()}
     >
       <div className="flex flex-wrap items-center gap-3">
         <span className="rounded-full border border-line bg-surface px-3 py-1 text-[11px] uppercase tracking-proposal text-graphite">
@@ -67,11 +67,11 @@ export function BudgetPackageCard({
         ))}
       </div>
 
-      <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-line bg-surface">
+      <div className="print-flow mt-8 overflow-hidden rounded-[1.5rem] border border-line bg-surface">
         {packageOption.lineItems.map((item, index) => (
           <div
             key={`${packageOption.id}-${item.item}`}
-            className={`px-5 py-4 sm:px-6 ${
+            className={`print-keep px-5 py-4 sm:px-6 ${
               index === packageOption.lineItems.length - 1
                 ? ""
                 : "border-b border-line"

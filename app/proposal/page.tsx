@@ -30,8 +30,8 @@ export const metadata: Metadata = {
 
 export default function ProposalPage() {
   return (
-    <div className="bg-surface">
-      <div className="mx-auto max-w-5xl px-6 py-12 lg:px-8 lg:py-16">
+    <div className="bg-surface print-flow">
+      <div className="print-page-wrap mx-auto max-w-5xl px-6 py-12 lg:px-8 lg:py-16">
         <div className="no-print mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Link
             href="/"
@@ -48,7 +48,7 @@ export default function ProposalPage() {
           </div>
         </div>
 
-        <article className="rounded-[2rem] border border-line bg-white px-6 py-8 shadow-panel sm:px-8 sm:py-10 lg:px-10">
+        <article className="print-sheet rounded-[2rem] border border-line bg-white px-6 py-8 shadow-panel sm:px-8 sm:py-10 lg:px-10">
           <header className="border-b border-line pb-8">
             <SiteLogo variant="proposal" />
             <p className="page-kicker">Printable Proposal</p>
@@ -59,7 +59,7 @@ export default function ProposalPage() {
               Production proposal and package options
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.5rem] border border-line bg-surface px-5 py-5">
+              <div className="print-keep rounded-[1.5rem] border border-line bg-surface px-5 py-5">
                 <p className="text-xs uppercase tracking-proposal text-graphite">
                   Prepared by
                 </p>
@@ -68,7 +68,7 @@ export default function ProposalPage() {
                   {siteTagline}
                 </p>
               </div>
-              <div className="rounded-[1.5rem] border border-line bg-surface px-5 py-5">
+              <div className="print-keep rounded-[1.5rem] border border-line bg-surface px-5 py-5">
                 <p className="text-xs uppercase tracking-proposal text-graphite">
                   Package range
                 </p>
@@ -82,20 +82,20 @@ export default function ProposalPage() {
             </div>
           </header>
 
-          <section className="border-b border-line py-8">
+          <section className="print-page-section print-flow border-b border-line py-8">
             <h2 className="font-display text-3xl text-ink">
               Lifestyle Studios Introduction
             </h2>
             <p className="mt-4 text-sm leading-8 text-graphite">{aboutCopy}</p>
           </section>
 
-          <section className="border-b border-line py-8">
+          <section className="print-page-section print-flow border-b border-line py-8">
             <h2 className="font-display text-3xl text-ink">Project Overview</h2>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="print-page-grid mt-6 grid gap-4 sm:grid-cols-2">
               {overviewCards.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-[1.4rem] border border-line bg-surface px-5 py-4"
+                  className="print-keep rounded-[1.4rem] border border-line bg-surface px-5 py-4"
                 >
                   <p className="text-xs uppercase tracking-proposal text-graphite">
                     {item.title}
@@ -106,13 +106,13 @@ export default function ProposalPage() {
             </div>
           </section>
 
-          <section className="border-b border-line py-8">
+          <section className="print-page-section print-flow border-b border-line py-8">
             <h2 className="font-display text-3xl text-ink">Production Scope</h2>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="print-page-grid mt-6 grid gap-4 sm:grid-cols-2">
               {detailedProductionScope.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-[1.4rem] border border-line bg-surface px-5 py-4"
+                  className="print-keep rounded-[1.4rem] border border-line bg-surface px-5 py-4"
                 >
                   <p className="font-display text-xl text-ink">{item.title}</p>
                   <p className="mt-2 text-sm leading-7 text-graphite">
@@ -123,13 +123,13 @@ export default function ProposalPage() {
             </div>
           </section>
 
-          <section className="border-b border-line py-8">
+          <section className="print-page-section print-flow border-b border-line py-8">
             <h2 className="font-display text-3xl text-ink">Equipment</h2>
             <div className="mt-6 space-y-4">
               {gearRentals.map((item) => (
                 <div
                   key={item.name}
-                  className="rounded-[1.4rem] border border-line bg-surface px-5 py-4"
+                  className="print-keep rounded-[1.4rem] border border-line bg-surface px-5 py-4"
                 >
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                     <p className="font-display text-xl text-ink">{item.name}</p>
@@ -143,13 +143,13 @@ export default function ProposalPage() {
             </div>
           </section>
 
-          <section className="border-b border-line py-8">
+          <section className="print-page-section print-flow border-b border-line py-8">
             <h2 className="font-display text-3xl text-ink">Crew</h2>
             <div className="mt-6 space-y-4">
               {crewMembers.map((member) => (
                 <div
                   key={member.role}
-                  className="rounded-[1.4rem] border border-line bg-surface px-5 py-4"
+                  className="print-keep rounded-[1.4rem] border border-line bg-surface px-5 py-4"
                 >
                   <p className="font-display text-xl text-ink">{member.role}</p>
                   <p className="mt-2 text-sm leading-7 text-graphite">
@@ -160,13 +160,13 @@ export default function ProposalPage() {
             </div>
           </section>
 
-          <section className="border-b border-line py-8">
+          <section className="print-page-section print-flow border-b border-line py-8">
             <h2 className="font-display text-3xl text-ink">Post-Production</h2>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="print-page-grid mt-6 grid gap-4 sm:grid-cols-2">
               {postProductionItems.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-[1.4rem] border border-line bg-surface px-5 py-4"
+                  className="print-keep rounded-[1.4rem] border border-line bg-surface px-5 py-4"
                 >
                   <p className="font-display text-xl text-ink">{item.title}</p>
                   <p className="mt-2 text-sm leading-7 text-graphite">
@@ -177,13 +177,13 @@ export default function ProposalPage() {
             </div>
           </section>
 
-          <section className="border-b border-line py-8">
+          <section className="print-page-section print-flow border-b border-line py-8">
             <h2 className="font-display text-3xl text-ink">Deliverables</h2>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="print-page-grid mt-6 grid gap-4 sm:grid-cols-2">
               {deliverables.map((item) => (
                 <div
                   key={item}
-                  className="rounded-[1.4rem] border border-line bg-surface px-5 py-4 text-sm leading-7 text-ink"
+                  className="print-keep rounded-[1.4rem] border border-line bg-surface px-5 py-4 text-sm leading-7 text-ink"
                 >
                   {item}
                 </div>
@@ -191,7 +191,7 @@ export default function ProposalPage() {
             </div>
           </section>
 
-          <section className="border-b border-line py-8">
+          <section className="print-page-section print-flow border-b border-line py-8">
             <h2 className="font-display text-3xl text-ink">
               Talk Show Package Options
             </h2>
@@ -205,13 +205,13 @@ export default function ProposalPage() {
                   key={item.id}
                   packageOption={item}
                   showDescriptions
-                  className="shadow-none"
+                  className="print-flow shadow-none"
                 />
               ))}
             </div>
           </section>
 
-          <section className="border-b border-line py-8">
+          <section className="print-page-section print-flow border-b border-line py-8">
             <h2 className="font-display text-3xl text-ink">
               Cooking Show Package Options
             </h2>
@@ -226,21 +226,21 @@ export default function ProposalPage() {
                   key={item.id}
                   packageOption={item}
                   showDescriptions
-                  className="shadow-none"
+                  className="print-flow shadow-none"
                 />
               ))}
             </div>
           </section>
 
-          <section className="pt-8">
+          <section className="print-page-section print-flow pt-8">
             <h2 className="font-display text-3xl text-ink">
               Contact Information
             </h2>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="print-page-grid mt-6 grid gap-4 sm:grid-cols-2">
               {[...contactDetails, ...socialLinks].map((item) => (
                 <div
                   key={item.label}
-                  className="rounded-[1.4rem] border border-line bg-surface px-5 py-4"
+                  className="print-keep rounded-[1.4rem] border border-line bg-surface px-5 py-4"
                 >
                   <p className="text-xs uppercase tracking-proposal text-graphite">
                     {item.label}

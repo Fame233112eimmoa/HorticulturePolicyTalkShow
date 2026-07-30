@@ -91,9 +91,36 @@ body {
     box-shadow: none !important;
   }
 
-  section,
-  article {
-    break-inside: avoid;
+  .print-sheet,
+  .print-flow {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    overflow: visible !important;
+  }
+
+  .print-keep {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-sheet {
+    max-width: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .print-page-wrap {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .print-page-section {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+  }
+
+  .print-page-grid {
+    gap: 10px !important;
   }
 
   a {
