@@ -224,7 +224,7 @@ export const productionVideos: ManagedMediaAsset[] = [
     description:
       "A studio walkthrough showing the first room option, seating arrangement, camera sightlines, and the overall atmosphere for the policy talk-show recording.",
     src: "/videos/studio-option-1.mp4",
-    poster: "/images/studio/studio-setup-visual-idea.jpg",
+    poster: "/images/studio/studio-option-1-poster.png",
     kind: "video",
   },
   {
@@ -233,7 +233,7 @@ export const productionVideos: ManagedMediaAsset[] = [
     description:
       "A second studio walkthrough presenting an alternate set option with different spacing, composition, and visual balance for the discussion format.",
     src: "/videos/studio-option-2.mp4",
-    poster: "/images/studio/studio-live-panel-setup.jpg",
+    poster: "/images/studio/studio-option-2-poster.png",
     kind: "video",
   },
   {
